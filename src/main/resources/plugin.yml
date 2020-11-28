@@ -1,0 +1,8 @@
+name: EproAddons
+version: ${project.version}
+main: com.gestankbratwurst.eproaddons.EproAddons
+api-version: 1.16
+authors: [Gestankbratwurst]
+description: Verschiedene Addons für Epro4
+depend:
+  - ProtocolLib

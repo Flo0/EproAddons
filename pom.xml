@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.gestankbratwurst</groupId>
+  <artifactId>EproAddons</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>EproAddons</name>
+
+  <description>Verschiedene Addons für Epro4</description>
+  <properties>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/groups/public/</url>
+    </repository>
+    <repository>
+      <id>avarion-dev-releases</id>
+      <url>http://168.119.168.65:8081/repository/maven-releases/</url>
+    </repository>
+    <repository>
+      <id>avarion-dev</id>
+      <url>http://168.119.168.65:8081/repository/maven-snapshots/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- Paper with NMS -->
+    <dependency>
+      <groupId>com.destroystokyo.paper</groupId>
+      <artifactId>papercraft</artifactId>
+      <version>1.16.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.16</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- ProtocolLib -->
+    <dependency>
+      <groupId>com.comphenix.protocol</groupId>
+      <artifactId>ProtocolLib</artifactId>
+      <version>4.6.0-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Annotation Command Framework -->
+    <dependency>
+      <groupId>co.aikar</groupId>
+      <artifactId>acf-paper</artifactId>
+      <version>0.5.0-SNAPSHOT</version>
+    </dependency>
+    <!-- SmartInventoryAPI -->
+    <dependency>
+      <groupId>net.crytec.libs</groupId>
+      <artifactId>InventoryAPI</artifactId>
+      <version>1.2.1-SNAPSHOT</version>
+    </dependency>
+    <!-- Commons -->
+    <dependency>
+      <groupId>net.crytec.libs</groupId>
+      <artifactId>commons</artifactId>
+      <version>1.4.1-SNAPSHOT</version>
+    </dependency>
+    <!-- ProtocolAPI -->
+    <dependency>
+      <groupId>net.crytec.libs</groupId>
+      <artifactId>protocol</artifactId>
+      <version>1.4.1-SNAPSHOT</version>
+    </dependency>
+    <!--Google Caffeine-->
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>2.8.1</version>
+    </dependency>
+  </dependencies>
+</project>
